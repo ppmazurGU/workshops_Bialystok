@@ -33,7 +33,7 @@
 
                 history.push(userJoinedObj);
 
-                var userJoinedJSONMsg = JSON.stringify({type: 'message', data: {name: userName}});
+                var userJoinedJSONMsg = JSON.stringify({type: 'message', data: userJoinedObj});
                 wss.broadcast(userJoinedJSONMsg);
 
             } else {
