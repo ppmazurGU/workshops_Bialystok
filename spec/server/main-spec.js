@@ -41,7 +41,7 @@ describe('Suite of unit tests', function () {
 
     describe('Testing sending & receiving msg', function(){
 
-        it('Socket shouldsend & receive msg', function (done) {
+        it('Socket should send & receive msg', function (done) {
             expect(typeof socket).not.toBe(undefined);
 
             var messageToSend = 'Pawel';
