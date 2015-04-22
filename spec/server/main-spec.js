@@ -51,7 +51,7 @@ describe('Suite of unit tests', function () {
                     var parsedMsg = JSON.parse(msg);
                     // First msg is hello msg from the server.
                     if(parsedMsg.type === 'message') {
-                        expect(parsedMsg.data.name).toBe(messageToSend);
+                        expect(parsedMsg.data.text.indexOf('Pawel')).toBe(0);
                         done();
                     }
                 }

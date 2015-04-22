@@ -3,8 +3,6 @@ var ChatController = function (chatService) {
 
    var _that = this;
 
-   _that.hello = 'Hello Bialystok.';
-
    _that.msg = '';
 
    _that.chatObject = chatService.getChatObject();
