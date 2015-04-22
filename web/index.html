@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Workshops2015</title>
+   <meta charset="UTF-8">
+   <title>Workshops2015</title>
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
 </head>
 <body ng-app="app">
 
 <div class="container">
 
-    <div class="panel panel-primary" ng-controller="ChatController as chatCtrl">
-        <div class="panel-heading">
-            <h2>Chat application</h2>
-        </div>
+   <div class="panel panel-primary" ng-controller="ChatController as chatCtrl">
+      <div class="panel-heading">
+         <h2>Chat application</h2>
+      </div>
 
-        <div id="chat" class="panel-body" style="max-height: 500px; overflow-y: auto;">
-            <table class="table table-striped">
-                <tr ng-repeat="message in chatCtrl.chatObject.messages">
-                    <td>
-                        <strong>{{message.author}}</strong>
-                        <span>({{message.time | date:'short'}}) :</span>
-                        <span>{{message.text}}</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
+      <div id="chat" class="panel-body" style="max-height: 500px; overflow-y: auto;">
+         <table class="table table-striped">
+            <tr ng-repeat="message in chatCtrl.chatObject.messages">
+               <td>
+                  <strong>{{message.author}}</strong>
+                  <span>({{message.time | date:'short'}}) :</span>
+                  <span>{{message.text}}</span>
+               </td>
+            </tr>
+         </table>
+      </div>
 
-        <div class="panel-footer">
-            <div ng-if="chatCtrl.chatObject.messages.length === 0">{{chatCtrl.chatObject.info}}</div>
-            <form class="input-group">
-                <input type="text" class="form-control" ng-model="chatCtrl.msg">
+      <div class="panel-footer">
+         <div ng-if="chatCtrl.chatObject.messages.length === 0">{{chatCtrl.chatObject.info}}</div>
+         <form class="input-group">
+            <input type="text" class="form-control" ng-model="chatCtrl.msg">
               <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit" ng-click="chatCtrl.sendMsg()">Send msg</button>
               </span>
-            </form>
-        </div>
-    </div>
+         </form>
+      </div>
+   </div>
 </div>
 
 <script src="bower_components/angular/angular.js"></script>
@@ -47,6 +47,7 @@
 <script src="js/app.module.js"></script>
 <script src="js/controllers/chatCtrl.js"></script>
 <script src="js/services/chatSrvc.js"></script>
+<script src="js/services/socketSrvc.js"></script>
 
 </body>
 </html>
